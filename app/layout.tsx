@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: '오늘의 운세',
   description: '운세',
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
