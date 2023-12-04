@@ -55,21 +55,19 @@ export default function Home() {
 
   return (
     <>
-
-      <p className='text-center py-8 font-bold font-serif text-2xl bg-teal-400 '>오늘의 운세</p>
+      <p className='text-center py-8 font-bold text-2xl bg-rose-200'>오늘의 운세 🍀</p>
       <div className='max-w-2xl  m-auto mt-24'>
-        
         <img className='w-full h-[400px] mb-5' src="/lucky.jpg" alt="lucky"/>  
         <div className='font-bold mb-4'> 성별
-          <button onClick={() => setGender('m')} className={`border-[1px] border-black-200 mx-2 px-2 hover: ${gender === 'm' && 'bg-teal-500 text-white'}`}>남자</button>
-          <button onClick={() => setGender('f')} className={`border-[1px] border-black-200 mx-2 px-2 ${gender === 'f' && 'bg-teal-500 text-white'}`}>여자</button>
+          <button onClick={() => setGender('m')} className={`border-[1px] border-black-200 mx-2 py-2 px-3 ${gender === 'm' && 'bg-rose-300 text-white'}`}>🧑🏻</button>
+          <button onClick={() => setGender('f')} className={`border-[1px] border-black-200 mx-2 py-2 px-3 ${gender === 'f' && 'bg-rose-300 text-white'}`}>👩🏻</button>
         </div>
         <div className='mb-4'>
           <span className='mr-5 font-bold mb-4'>생년월일</span>
           <input type='text' className='border-[1px]' onChange={birthChange} value={birthDate} placeholder='생년월일 8자리' />
         </div>
         <div className='mb-4'>
-          <span className='mr-5 font-bold'>
+          <span className='mr-7 font-bold'>
             음,양력</span>
           <select value={month} className='border-[1px]' onChange={(e) => setMonth(e.target.value)}>
             <option value="1">양력</option>
@@ -96,9 +94,8 @@ export default function Home() {
             <option value="11">21:30 ~ 23:29</option>
           </select>
         </div>
-        <button className='mt-10 font-bold w-full bg-teal-400 hover:bg-teal-500 focus:bg-teal-300 py-2 font-serif' onClick={fetchData}>운세보기</button>
+        <button className='mt-10 font-bold w-full bg-rose-200 hover:bg-rose-300 focus:bg-teal-300 py-2' onClick={fetchData}>운세보기</button>
       </div>
-
       {resultToday && (
         <>
           <div className='max-w-7xl m-auto '>
@@ -108,11 +105,10 @@ export default function Home() {
           {resultToday.content.map((item, idx) => (
             <div key={idx}>
               <div className='max-w-7xl m-auto border-2 my-5 px-2 py-2 rounded-md'>
-                <h3 className='pt-2 font-bold text-lg'>{item.name}</h3>
-                <p className='font-bold'>{item.desc}</p>
+                <h3 className='pt-2 font-bold text-lg mb-2'>{item.name}</h3>
+                <p className=''>{item.desc}</p>
               </div>
             </div>
-
           ))}
         </>
       )}
