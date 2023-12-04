@@ -94,7 +94,7 @@ export default function Home() {
             <option value="11">21:30 ~ 23:29</option>
           </select>
         </div>
-        <button className='mt-10 font-bold w-full bg-rose-200 hover:bg-rose-300 focus:bg-teal-300 py-2' onClick={fetchData}>운세보기</button>
+        <button className='mt-10 font-bold w-full bg-rose-200 hover:bg-rose-300 focus:bg-rose-100 py-2' onClick={fetchData}>운세보기</button>
       </div>
       {resultToday && (
         <>
